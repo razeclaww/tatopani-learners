@@ -1,505 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Presentation Mastery · Session 1</title>
-    <!-- Google Fonts for aesthetic/cursive feel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
-    <style>
-        /* ----- reset & base (black & white) ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
-            color: #000000;
-            line-height: 1.7;
-            padding: 2.5rem 1.5rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* ----- session badge ----- */
-        .session-badge {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 0.4rem 1.5rem;
-            border-radius: 30px;
-            margin-bottom: 2rem;
-        }
-
-        /* ----- hero (minimal, elegant) ----- */
-        .hero {
-            padding: 3.5rem 0 4rem;
-            border-bottom: 1px solid #eaeaea;
-            margin-bottom: 4rem;
-        }
-
-        .hero-nav {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .hero-nav h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #000;
-        }
-
-        .hero-nav a {
-            color: #000;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            opacity: 0.6;
-            transition: opacity 0.2s;
-            margin-left: 1.8rem;
-        }
-
-        .hero-nav a:hover {
-            opacity: 1;
-        }
-
-        .hero-box h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin-bottom: 0.8rem;
-            color: #000;
-        }
-
-        .hero-box h2 i {
-            font-style: italic;
-            font-weight: 400;
-            opacity: 0.7;
-        }
-
-        .hero-box p {
-            font-size: 1.2rem;
-            color: #333;
-            max-width: 550px;
-            font-weight: 300;
-            border-left: 4px solid #000;
-            padding-left: 1.5rem;
-        }
-
-        /* ----- sections ----- */
-        section {
-            margin-bottom: 4.5rem;
-        }
-
-        .section-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            color: #000;
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-        }
-
-        .section-heading .accent {
-            font-style: italic;
-            font-weight: 400;
-            font-size: 1.8rem;
-            opacity: 0.5;
-        }
-
-        .section-subhead {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1.5rem;
-        }
-
-        /* ----- phases grid (2 columns, aesthetic) ----- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 2.5rem 2.2rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06), 0 10px 20px rgba(0, 0, 0, 0.02);
-            border: 1px solid #f1f1f1;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.10), 0 15px 30px rgba(0, 0, 0, 0.04);
-            border-color: #ccc;
-        }
-
-        .card-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #000;
-            opacity: 0.08;
-            line-height: 1;
-            margin-bottom: -1.8rem;
-            pointer-events: none;
-            letter-spacing: -2px;
-        }
-
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            margin-bottom: 0.3rem;
-            color: #000;
-        }
-
-        .card h3 .tool-tag {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: #000;
-            color: #fff;
-            padding: 0.1rem 0.8rem;
-            border-radius: 20px;
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 0.5rem;
-        }
-
-        .card .sub-title {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 0.8rem;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #1e1e1e;
-            line-height: 1.8;
-            margin-bottom: 0.8rem;
-        }
-
-        .card p:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .card .problem {
-            background: #f8f8f8;
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            margin: 0.8rem 0 0.2rem;
-            font-size: 0.9rem;
-            border-left: 3px solid #000;
-        }
-
-        .card .problem strong {
-            font-weight: 600;
-        }
-
-        /* ----- tools table (minimal) ----- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid #eaeaea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-        }
-
-        th {
-            background: #000;
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 1rem 1.5rem;
-            text-align: left;
-        }
-
-        td {
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid #f0f0f0;
-            color: #000;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover td {
-            background: #fafafa;
-        }
-
-        /* ----- prompt template (black) ----- */
-        pre {
-            background: #000;
-            color: #fff;
-            padding: 1.8rem 2.2rem;
-            border-radius: 20px;
-            font-family: 'Fira Code', 'Menlo', monospace;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-break: break-word;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        /* ----- footer (black) ----- */
-        .footer {
-            text-align: center;
-            padding: 2.5rem 0 1.5rem;
-            border-top: 1px solid #eee;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .footer a {
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.2s;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
-
-        .footer a:hover {
-            opacity: 0.6;
-            text-decoration: underline;
-        }
-
-        /* ----- responsive ----- */
-        @media (max-width: 900px) {
-            .grid {
-                gap: 1.8rem;
-            }
-            .hero-box h2 {
-                font-size: 2.8rem;
-            }
-        }
-
-        @media (max-width: 720px) {
-            body {
-                padding: 1.2rem;
-            }
-            .hero {
-                padding: 2rem 0 2.5rem;
-            }
-            .hero-box h2 {
-                font-size: 2.2rem;
-            }
-            .hero-nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .hero-nav a {
-                margin-left: 0;
-                margin-right: 1.5rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 1.8rem;
-            }
-            .section-heading {
-                font-size: 2rem;
-            }
-            .card {
-                padding: 2rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-box h2 {
-                font-size: 1.8rem;
-            }
-            .hero-box p {
-                font-size: 1rem;
-                padding-left: 1rem;
-            }
-            .card h3 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Presentation Mastery | Session 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
+    <div class="container">
 
-        <!-- Session 1 badge -->
-        <div class="session-badge">Session 1</div>
+        <div class="session-badge">Session 1</div>
 
-        <!-- Hero -->
-        <header class="hero">
-            <nav class="hero-nav">
-                <h1>AI Presentation Mastery</h1>
-                <div>
-                    <a href="#phases">Workflow</a>
-                    <a href="#tools">Stack</a>
-                </div>
-            </nav>
-            <div class="hero-box">
-                <h2>Fixing the <i>blind spots</i> <br />AI leaves behind.</h2>
-                <p>A sharp, human-first guide to navigating the unseen pitfalls of AI-generated presentations.</p>
-            </div>
-        </header>
+        <header class="hero">
+            <nav class="hero-nav">
+                <h1>AI Presentation Mastery</h1>
+                <div class="nav-links">
+                    <a href="#phases">Workflow</a>
+                    <a href="#tools">Stack</a>
+                </div>
+            </nav>
+            <div class="hero-box">
+                <h2>Fixing the <i>blind spots</i> <br />AI leaves behind.</h2>
+                <p>A sharp, guide to navigating the unseen pitfalls of AI-generated presentations.</p>
+            </div>
+        </header>
 
-        <main>
+        <main>
 
-            <!-- 5 Phases: focused on unseen problems & tool specialization -->
-            <section id="phases">
-                <div class="section-heading">
-                    The Unseen Workflow <span class="accent">· 5 phases</span>
-                </div>
-                <div class="section-subhead">
-                    You already know how to make slides. We're here to fix what AI breaks.
-                </div>
+            <section id="phases">
+                <div class="section-heading">
+                    The Unseen Workflow <span class="accent">· 5 phases</span>
+                </div>
+                <div class="section-subhead">
+                    You already know how to make slides. We're here to fix what AI breaks.
+                </div>
 
-                <div class="grid">
+                <div class="grid">
 
-                    <!-- Phase 1: Research & Ingestion -->
-                    <article class="card">
-                        <div class="card-number">01</div>
-                        <h3>Research &amp; Ingestion <span class="tool-tag">NotebookLM</span></h3>
-                        <div class="sub-title">Turning chaos into context</div>
-                        <p>Dumping a 100-page PDF into ChatGPT usually results in hallucinated summaries or generic fluff. The real art is in <strong>grounding</strong> the AI.</p>
-                        <div class="problem">
-                            <strong>Unseen problem:</strong> AI loses nuance and contradictions. <br />
-                            <strong>Fix:</strong> Use NotebookLM to upload sources, then force it to highlight <em>conflicting data points</em> or <em>unexpected outliers</em>. This turns research into active discovery.
-                        </div>
-                    </article>
+                    <article class="card">
+                        <div class="card-number">01</div>
+                        <h3>Research &amp; Ingestion <span class="tool-tag">NotebookLM</span></h3>
+                        <div class="sub-title">Turning chaos into context</div>
+                        <p>Dumping a 100-page PDF into ChatGPT usually results in hallucinated summaries or generic fluff. The real art is in <strong>grounding</strong> the AI.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI loses nuance and contradictions. <br />
+                            <strong>Fix:</strong> Use NotebookLM to upload sources, then force it to highlight <em>conflicting data points</em> or <em>unexpected outliers</em>. This turns research into active discovery.
+                        </div>
+                    </article>
 
-                    <!-- Phase 2: Narrative & Storytelling -->
-                    <article class="card">
-                        <div class="card-number">02</div>
-                        <h3>Narrative Arc <span class="tool-tag">Claude / ChatGPT</span></h3>
-                        <div class="sub-title">Fighting the algorithm's formula</div>
-                        <p>AI-generated stories are painfully predictable (Problem → Solution → Conclusion). Audiences tune out.</p>
-                        <div class="problem">
-                            <strong>Unseen problem:</strong> AI thinks in features, not in human conflict. <br />
-                            <strong>Fix:</strong> You define the "Why." Use AI to brainstorm the "What" and "How." Prompt it to structure the narrative around a specific <em>tension</em> or <em>trade-off</em> your audience cares about.
-                        </div>
-                    </article>
+                    <article class="card">
+                        <div class="card-number">02</div>
+                        <h3>Narrative Arc <span class="tool-tag">Claude / ChatGPT</span></h3>
+                        <div class="sub-title">Fighting the algorithm's formula</div>
+                        <p>AI-generated stories are painfully predictable (Problem → Solution → Conclusion). Audiences tune out.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI thinks in features, not in human conflict. <br />
+                            <strong>Fix:</strong> You define the "Why." Use AI to brainstorm the "What" and "How." Prompt it to structure the narrative around a specific <em>tension</em> or <em>trade-off</em> your audience cares about.
+                        </div>
+                    </article>
 
-                    <!-- Phase 3: Structuring & Outlining -->
-                    <article class="card">
-                        <div class="card-number">03</div>
-                        <h3>Structuring Logic <span class="tool-tag">Any LLM</span></h3>
-                        <div class="sub-title">Breaking the robotic symmetry</div>
-                        <p>AI outlines are notoriously symmetrical (Intro, Feature 1, Feature 2, Conclusion). This creates boring, predictable slides.</p>
-                        <div class="problem">
-                            <strong>Unseen problem:</strong> AI organizes by <em>list</em>, not by <em>priority</em>. <br />
-                            <strong>Fix:</strong> Force the AI to think in terms of <strong>audience benefits</strong>. Ask it: "What does the audience need to hear *first* to care about the rest?" Build the pyramid from there.
-                        </div>
-                    </article>
+                    <article class="card">
+                        <div class="card-number">03</div>
+                        <h3>Structuring Logic <span class="tool-tag">Any LLM</span></h3>
+                        <div class="sub-title">Breaking the robotic symmetry</div>
+                        <p>AI outlines are notoriously symmetrical (Intro, Feature 1, Feature 2, Conclusion). This creates boring, predictable slides.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI organizes by <em>list</em>, not by <em>priority</em>. <br />
+                            <strong>Fix:</strong> Force the AI to think in terms of <strong>audience benefits</strong>. Ask it: "What does the audience need to hear *first* to care about the rest?" Build the pyramid from there.
+                        </div>
+                    </article>
 
-                    <!-- Phase 4: Writing & Refining -->
-                    <article class="card">
-                        <div class="card-number">04</div>
-                        <h3>Writing with Style <span class="tool-tag">Claude</span></h3>
-                        <div class="sub-title">Killing the AI voice</div>
-                        <p>Everyone can spot AI writing a mile away—too many words, too formal, zero personality. You need an edge.</p>
-                        <div class="problem">
-                            <strong>Unseen problem:</strong> AI writes like a corporate memo. <br />
-                            <strong>Fix:</strong> Use Claude for nuanced rewrites. Feed it examples of writers you admire (e.g., "Rewrite this slide in the concise, punchy style of Steve Jobs"). This is where style separates the good from the great.
-                        </div>
-                    </article>
+                    <article class="card">
+                        <div class="card-number">04</div>
+                        <h3>Writing with Style <span class="tool-tag">Claude</span></h3>
+                        <div class="sub-title">Killing the AI voice</div>
+                        <p>Everyone can spot AI writing a mile away—too many words, too formal, zero personality. You need an edge.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI writes like a corporate memo. <br />
+                            <strong>Fix:</strong> Use Claude for nuanced rewrites. Feed it examples of writers you admire (e.g., "Rewrite this slide in the concise, punchy style of Steve Jobs"). This is where style separates the good from the great.
+                        </div>
+                    </article>
 
-                    <!-- Phase 5: Design & Visuals -->
-                    <article class="card">
-                        <div class="card-number">05</div>
-                        <h3>Design Translation <span class="tool-tag">Gamma / Midjourney</span></h3>
-                        <div class="sub-title">Bridging writing and visuals</div>
-                        <p>Great writers are rarely great designers, and vice versa. AI doesn't bridge this gap—it widens it.</p>
-                        <div class="problem">
-                            <strong>Unseen problem:</strong> Text-heavy slides kill presentations. <br />
-                            <strong>Fix:</strong> Separate the concerns. Use Gamma or Beautiful.ai to handle the visual heavy lifting, and use DALL-E/Midjourney for custom, concept-driven imagery. Let the writer write, and let the designer design—even if both are AI tools.
-                        </div>
-                    </article>
+                    <article class="card">
+                        <div class="card-number">05</div>
+                        <h3>Design Translation <span class="tool-tag">Gamma / Midjourney</span></h3>
+                        <div class="sub-title">Bridging writing and visuals</div>
+                        <p>Great writers are rarely great designers, and vice versa. AI doesn't bridge this gap—it widens it.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> Text-heavy slides kill presentations. <br />
+                            <strong>Fix:</strong> Separate the concerns. Use Gamma or Beautiful.ai to handle the visual heavy lifting, and use DALL-E/Midjourney for custom, concept-driven imagery. Let the writer write, and let the designer design—even if both are AI tools.
+                        </div>
+                    </article>
 
-                </div>
-            </section>
+                </div>
+            </section>
 
-            <!-- Recommended AI Stack -->
-            <section id="tools">
-                <div class="section-heading">
-                    The Stack <span class="accent">· specialized tools</span>
-                </div>
-                <div class="section-subhead">
-                    Using the right tool for the right job is the secret sauce.
-                </div>
-                <table>
-                    <tr><th>Purpose</th><th>Tool</th></tr>
-                    <tr><td>Research &amp; Source Grounding</td><td>NotebookLM</td></tr>
-                    <tr><td>Writing &amp; Tone Refinement</td><td>Claude / ChatGPT</td></tr>
-                    <tr><td>Slide Generation &amp; Layout</td><td>Gamma / Beautiful.ai</td></tr>
-                    <tr><td>Custom Visuals &amp; Imagery</td><td>Midjourney / DALL-E</td></tr>
-                </table>
-            </section>
+            <section id="tools">
+                <div class="section-heading">
+                    The Stack <span class="accent">· specialized tools</span>
+                </div>
+                <div class="section-subhead">
+                    Using the right tool for the right job is the secret sauce.
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr><th>Purpose</th><th>Tool</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Research &amp; Source Grounding</td><td>NotebookLM</td></tr>
+                            <tr><td>Writing &amp; Tone Refinement</td><td>Claude / ChatGPT</td></tr>
+                            <tr><td>Slide Generation &amp; Layout</td><td>Gamma / Beautiful.ai</td></tr>
+                            <tr><td>Custom Visuals &amp; Imagery</td><td>Midjourney / DALL-E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-            <!-- Prompt Template -->
-            <section>
-                <div class="section-heading">
-                    Prompt Template <span class="accent">· start here</span>
-                </div>
-                <div class="section-subhead">
-                    A solid foundation to keep AI on a short leash.
-                </div>
-                <pre>Create a 12-slide presentation.
+            <section>
+                <div class="section-heading">
+                    Prompt Template <span class="accent">· start here</span>
+                </div>
+                <div class="section-subhead">
+                    A solid foundation to keep AI on a short leash.
+                </div>
+                <div class="code-container">
+                    <pre>Create a 12-slide presentation.
 Audience: Grade 12
 Tone: Professional, sharp, minimal text
 Include: Diagrams, statistics, examples, speaker notes, conclusion.
 Constraint: Each slide must have fewer than 20 words.</pre>
-            </section>
+                </div>
+            </section>
 
-        </main>
+        </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            made by <a href="https://razeclaw.vercel.app" target="_blank">razeclaw</a>
-        </footer>
+        <footer class="footer">
+            made by <a href="https://razeclaw.vercel.app" target="_blank">razeclaw</a>
+        </footer>
 
-    </div>
+    </div>
 
 </body>
 </html>
