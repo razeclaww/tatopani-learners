@@ -1,53 +1,141 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Basics &amp; Easy Lesson Plans &mdash; AI and Digital Skills for Teachers</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Presentation Mastery | Session 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="back-nav">
-        <a href="../../" class="back-link">
-            <i class="fa-solid fa-arrow-left"></i> Back to Home
-        </a>
-    </div>
 
-    <div class="page-container">
-        <div class="session-header">
-            <span class="session-badge"><i class="fa-solid fa-clock"></i> Session 01 &mdash; Upcoming</span>
-            <h1 class="session-page-title cursive-title">AI Basics &amp; Easy Lesson Plans</h1>
-            <p class="session-page-desc">Learn how to use AI to write complete lesson plans, notes, and grading rubrics in just a few minutes.</p>
-        </div>
+    <div class="container">
 
-        <div class="content-section">
-            <h2>Session Materials</h2>
-            <p>Materials for this session will be uploaded here soon. Stay tuned!</p>
+        <div class="session-badge">Session 1</div>
 
-            <div class="materials-placeholder">
-                <i class="fa-solid fa-folder-open"></i>
-                <p>Resources Coming Soon</p>
+        <header class="hero">
+            <nav class="hero-nav">
+                <h1>AI Presentation Mastery</h1>
+                <div>
+                    <a href="#phases">Workflow</a>
+                    <a href="#tools">Stack</a>
+                </div>
+            </nav>
+            <div class="hero-box">
+                <h2>Fixing the <i>blind spots</i> <br />AI leaves behind.</h2>
+                <p>A sharp, guide to navigating the unseen pitfalls of AI-generated presentations.</p>
             </div>
+        </header>
 
-            <div class="upcoming-notice">
-                <i class="fa-solid fa-info-circle"></i>
-                <p>This session is marked as upcoming. Content will be added when ready.</p>
-            </div>
-        </div>
+        <main>
+
+            <section id="phases">
+                <div class="section-heading">
+                    The Unseen Workflow <span class="accent">· 5 phases</span>
+                </div>
+                <div class="section-subhead">
+                    You already know how to make slides. We're here to fix what AI breaks.
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+                        <div class="card-number">01</div>
+                        <h3>Research &amp; Ingestion <span class="tool-tag">NotebookLM</span></h3>
+                        <div class="sub-title">Turning chaos into context</div>
+                        <p>Dumping a 100-page PDF into ChatGPT usually results in hallucinated summaries or generic fluff. The real art is in <strong>grounding</strong> the AI.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI loses nuance and contradictions. <br />
+                            <strong>Fix:</strong> Use NotebookLM to upload sources, then force it to highlight <em>conflicting data points</em> or <em>unexpected outliers</em>. This turns research into active discovery.
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-number">02</div>
+                        <h3>Narrative Arc <span class="tool-tag">Claude / ChatGPT</span></h3>
+                        <div class="sub-title">Fighting the algorithm's formula</div>
+                        <p>AI-generated stories are painfully predictable (Problem → Solution → Conclusion). Audiences tune out.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI thinks in features, not in human conflict. <br />
+                            <strong>Fix:</strong> You define the "Why." Use AI to brainstorm the "What" and "How." Prompt it to structure the narrative around a specific <em>tension</em> or <em>trade-off</em> your audience cares about.
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-number">03</div>
+                        <h3>Structuring Logic <span class="tool-tag">Any LLM</span></h3>
+                        <div class="sub-title">Breaking the robotic symmetry</div>
+                        <p>AI outlines are notoriously symmetrical (Intro, Feature 1, Feature 2, Conclusion). This creates boring, predictable slides.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI organizes by <em>list</em>, not by <em>priority</em>. <br />
+                            <strong>Fix:</strong> Force the AI to think in terms of <strong>audience benefits</strong>. Ask it: "What does the audience need to hear *first* to care about the rest?" Build the pyramid from there.
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-number">04</div>
+                        <h3>Writing with Style <span class="tool-tag">Claude</span></h3>
+                        <div class="sub-title">Killing the AI voice</div>
+                        <p>Everyone can spot AI writing a mile away—too many words, too formal, zero personality. You need an edge.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> AI writes like a corporate memo. <br />
+                            <strong>Fix:</strong> Use Claude for nuanced rewrites. Feed it examples of writers you admire (e.g., "Rewrite this slide in the concise, punchy style of Steve Jobs"). This is where style separates the good from the great.
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-number">05</div>
+                        <h3>Design Translation <span class="tool-tag">Gamma / Midjourney</span></h3>
+                        <div class="sub-title">Bridging writing and visuals</div>
+                        <p>Great writers are rarely great designers, and vice versa. AI doesn't bridge this gap—it widens it.</p>
+                        <div class="problem">
+                            <strong>Unseen problem:</strong> Text-heavy slides kill presentations. <br />
+                            <strong>Fix:</strong> Separate the concerns. Use Gamma or Beautiful.ai to handle the visual heavy lifting, and use DALL-E/Midjourney for custom, concept-driven imagery. Let the writer write, and let the designer design—even if both are AI tools.
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="tools">
+                <div class="section-heading">
+                    The Stack <span class="accent">· specialized tools</span>
+                </div>
+                <div class="section-subhead">
+                    Using the right tool for the right job is the secret sauce.
+                </div>
+                <table>
+                    <tr><th>Purpose</th><th>Tool</th></tr>
+                    <tr><td>Research &amp; Source Grounding</td><td>NotebookLM</td></tr>
+                    <tr><td>Writing &amp; Tone Refinement</td><td>Claude / ChatGPT</td></tr>
+                    <tr><td>Slide Generation &amp; Layout</td><td>Gamma / Beautiful.ai</td></tr>
+                    <tr><td>Custom Visuals &amp; Imagery</td><td>Midjourney / DALL-E</td></tr>
+                </table>
+            </section>
+
+            <section>
+                <div class="section-heading">
+                    Prompt Template <span class="accent">· start here</span>
+                </div>
+                <div class="section-subhead">
+                    A solid foundation to keep AI on a short leash.
+                </div>
+                <pre>Create a 12-slide presentation.
+Audience: Grade 12
+Tone: Professional, sharp, minimal text
+Include: Diagrams, statistics, examples, speaker notes, conclusion.
+Constraint: Each slide must have fewer than 20 words.</pre>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            made by <a href="https://razeclaw.vercel.app" target="_blank">razeclaw</a>
+        </footer>
+
     </div>
-
-    <footer>
-        &copy; 2026 / built for our teachers by <a href="https://razeclaw.vercel.app" target="_blank">Aman kunwar</a>
-    </footer>
-
-    <script>
-        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.remove('dark');
-        } else {
-            document.documentElement.classList.add('dark');
-        }
-    </script>
 
 </body>
 </html>
