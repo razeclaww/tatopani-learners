@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Syllabus &mdash; AI and Digital Skills for Teachers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav-controls no-print">
+        <a href="../" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+        <button onclick="window.print()" class="print-btn" aria-label="Print Roadmap">
+            <i class="fa-solid fa-print"></i>
+        </button>
+    </div>
+
+    <div class="page-container">
+        <div class="syllabus-header">
+            <div class="header-info">
+                <span class="roadmap-badge">Professional Development Roadmap</span>
+                <h1 class="cursive-title">Course Syllabus</h1>
+                <p class="header-desc">A simple 5-session guide built to help teachers here in Tatopani feel confident using AI, saving hours on paperwork, and sorting out daily device problems.</p>
+                <div class="meta-bar">
+                    <span><i class="fa-solid fa-calendar-days"></i> 5 Training Days</span>
+                    <span>&middot;</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Tatopani, Nepal</span>
+                </div>
+            </div>
+            <div class="qr-section">
+                <div class="qr-box">
+                    <img src="../assets/qr-code.png" alt="QR Code">
+                </div>
+                <span>Scan to Open</span>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-node">
+                <div class="timeline-bullet"></div>
+                <span class="session-tag">01 / Introduction</span>
+                <h3 class="timeline-heading">AI Basics &amp; Easy Lesson Plans</h3>
+                <p class="timeline-summary">Use AI to write complete lesson plans, notes, and grading rubrics in minutes.</p>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-bullet"></div>
+                <span class="session-tag">02 / Workflow Efficiency</span>
+                <h3 class="timeline-heading">Cutting Down on Paperwork</h3>
+                <p class="timeline-summary">Learn simple cloud tools to write report card comments and sort grades without losing your evenings.</p>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-bullet"></div>
+                <span class="session-tag">03 / Interaction Design</span>
+                <h3 class="timeline-heading">Fun Quizzes &amp; Visual Aids</h3>
+                <p class="timeline-summary">Build quick slideshow layouts, digital flashcards, and engaging visual aids easily.</p>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-bullet"></div>
+                <span class="session-tag">04 / Problem Solving</span>
+                <h3 class="timeline-heading">Hands-on Tech Help</h3>
+                <p class="timeline-summary">Bring in your exact device errors, broken file formats, or computer glitches and we will fix them together.</p>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-bullet"></div>
+                <span class="session-tag">05 / Integrity &amp; Future</span>
+                <h3 class="timeline-heading">AI Ethics &amp; Honest Classrooms</h3>
+                <p class="timeline-summary">Manage student AI use, grade assignments fairly, and navigate modern classroom changes securely.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>Prepared by <span style="font-weight: 600;">Aman kunwar</span></div>
+            <div><a href="https://razeclaw.vercel.app" target="_blank">razeclaw.vercel.app</a></div>
+        </div>
+    </footer>
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body>
+</html>

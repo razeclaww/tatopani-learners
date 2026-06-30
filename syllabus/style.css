@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --bg-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --border: #e2e8f0;
+    --accent: #3b82f6;
+    --accent-light: #eff6ff;
+    --accent-dark: #2563eb;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-full: 9999px;
+}
+
+html.dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: #334155;
+    --accent: #60a5fa;
+    --accent-light: #1e3a5f;
+    --accent-dark: #93bbfd;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cursive-title {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.nav-controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+.back-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.print-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+}
+
+.print-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.page-container {
+    flex-grow: 1;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 90px 24px 40px;
+}
+
+.syllabus-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 640px) {
+    .syllabus-header {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 32px;
+    }
+}
+
+.header-info {
+    flex-grow: 1;
+}
+
+.roadmap-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    font-size: 0.7rem;
+    font-family: 'Inter', monospace;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.header-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 460px;
+    margin-top: 12px;
+}
+
+.meta-bar {
+    display: flex;
+    gap: 12px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'Inter', monospace;
+    margin-top: 12px;
+}
+
+.qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.qr-box {
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.qr-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+.qr-section span {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-family: 'Inter', monospace;
+}
+
+.timeline {
+    border-left: 2px solid var(--border);
+    margin-left: 4px;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-node {
+    position: relative;
+}
+
+.timeline-bullet {
+    position: absolute;
+    left: calc(-24px - 6px - 1px);
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+}
+
+.session-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: 'Inter', monospace;
+}
+
+.timeline-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 4px;
+}
+
+.timeline-summary {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-top: 4px;
+    font-weight: 300;
+}
+
+footer {
+    margin-top: auto;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'Inter', monospace;
+}
+
+.footer-content {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (min-width: 640px) {
+    .footer-content {
+        flex-direction: row;
+    }
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media print {
+    .no-print { display: none !important; }
+    body { background: #ffffff !important; color: #000000 !important; }
+    html.dark { --text-primary: #000000; --text-secondary: #444444; --border: #d4d4d4; }
+    .page-container { padding-top: 1rem !important; }
+    .syllabus-header { margin-bottom: 24px !important; padding-bottom: 16px !important; }
+    .timeline { gap: 16px !important; }
+    .qr-box { border-color: #a3a3a3 !important; }
+}

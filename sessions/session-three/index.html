@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Quizzes &amp; Visual Aids &mdash; AI and Digital Skills for Teachers</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-nav">
+        <a href="../../" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+
+    <div class="page-container">
+        <div class="session-header">
+            <span class="session-badge"><i class="fa-solid fa-clock"></i> Session 03 &mdash; Upcoming</span>
+            <h1 class="session-page-title cursive-title">Fun Quizzes &amp; Visual Aids</h1>
+            <p class="session-page-desc">Create quick slideshow layouts, digital study cards, and engaging visual aids that keep your students interested.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Session Materials</h2>
+            <p>Materials for this session will be uploaded here soon. Stay tuned!</p>
+
+            <div class="materials-placeholder">
+                <i class="fa-solid fa-folder-open"></i>
+                <p>Resources Coming Soon</p>
+            </div>
+
+            <div class="upcoming-notice">
+                <i class="fa-solid fa-info-circle"></i>
+                <p>This session is marked as upcoming. Content will be added when ready.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 / built for our teachers by <a href="https://razeclaw.vercel.app" target="_blank">Aman kunwar</a>
+    </footer>
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body>
+</html>
